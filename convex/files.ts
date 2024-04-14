@@ -1,4 +1,3 @@
-import { ConvexError, v } from "convex/values";
 import {
   MutationCtx,
   QueryCtx,
@@ -6,9 +5,9 @@ import {
   mutation,
   query,
 } from "./_generated/server";
-import { getUser } from "./users";
-import { fileTypes } from "./schema";
 import { Doc, Id } from "./_generated/dataModel";
+import {ConvexError, v} from "convex/values";
+import {fileTypes} from "./schema";
 
 export const generateUploadUrl = mutation(async (ctx) => {
   const identity = await ctx.auth.getUserIdentity();
